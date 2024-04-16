@@ -43,12 +43,12 @@ Travel Tracker is a web application that allows users to track the countries the
 * Create a '.env' file in the root directory.
 * Define the following variables in the '.env' file:
 
-PORT=3000
-DB_USER=<your-database-username>
-DB_HOST=<your-database-host>
-DB_DATABASE=<your-database-name>
-DB_PASSWORD=<your-database-password>
-DB_PORT=<your-database-port>
+- PORT=3000
+- DB_USER=<your-database-username>
+- DB_HOST=<your-database-host>
+- DB_DATABASE=<your-database-name>
+- DB_PASSWORD=<your-database-password>
+- DB_PORT=<your-database-port>
 
 ## Set up the database:
 
