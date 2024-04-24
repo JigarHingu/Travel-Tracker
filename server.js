@@ -1,11 +1,12 @@
 import dotenv from 'dotenv';
-dotenv.config();
-import bodyParser from 'body-parser';
 import express from 'express';
-import pg from 'pg' ;
+import bodyParser from 'body-parser';
+import pg from 'pg';
+
+dotenv.config();
 
 const app = express();
-const port = process.env.PORT || 3000; // Assuming you have a PORT variable defined in your environment or default to 3000
+const port = process.env.PORT || 3000;
 
 // Database connection setup
 const db = new pg.Client({
@@ -17,9 +18,9 @@ const db = new pg.Client({
 });
 db.connect();
 
-// Middlewares
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static("public"));
+// Middleware
+app.use(express.static("public")); // Serving static files first
+app.use(bodyParser.urlencoded({ extended: true })); // Parsing request bodies
 
 async function checkVisited() {
   const result = await db.query("SELECT country_code FROM visited_countries");
